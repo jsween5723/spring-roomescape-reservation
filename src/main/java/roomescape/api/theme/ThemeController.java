@@ -43,4 +43,10 @@ public class ThemeController {
   public void delete(@PathVariable("id") long id) {
     service.delete(id);
   }
+
+  @DeleteMapping("{id}")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  public void delete(@PathVariable("id") long id) {
+    themeRepository.delete(id);
+  }
 }
